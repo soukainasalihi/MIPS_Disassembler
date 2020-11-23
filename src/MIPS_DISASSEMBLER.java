@@ -2,9 +2,7 @@
 
 /*
  * Name : Soukaina salihi 
- * Class: CS472 EX Computer Architecture fall 2017 
- * Date: 10/3/2017
- * project 1
+ * Class: CS472 EX Computer Architecture 
  */
 /**
  *
@@ -18,7 +16,7 @@ public class MIPS_DISASSEMBLER {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        // int array that holdes instuctions that needs to be disassambled
+        // Integer array that holdes instuctions that needs to be disassambled
         int[] instr = {0xa1020000, 0x810afffc, 0x00831820, 0x01263820, 0x01224820,
             0x81180000, 0x81510010, 0x00624022, 0x00000000, 0x00000000,0x00000000,0x00000000 };
         // assumed starting address 
@@ -49,15 +47,15 @@ public class MIPS_DISASSEMBLER {
                 
 
                 int Rtype_source_reg_bitmask = 0x03E00000;
-                // do the tow's complement and shift the instruction by 21 position 
+                // Do the tow's complement and shift the instruction by 21 position 
                 int Rtype_source_reg = (instr[i] & Rtype_source_reg_bitmask) >>> 21;
 
                 int Rtype_source_reg2_bitmask = 0x001F0000;
-                // do the tow's complement and shift the instruction by 16 position 
+                // Do the tow's complement and shift the instruction by 16 position 
                 int Rtype_source_reg2 = (instr[i] & Rtype_source_reg2_bitmask) >>> 16;
 
                 int Rtype_dest_reg_bitmask = 0x0000F800;
-                //do the tow's complement and shift the instruction by 11 position
+                //Do the tow's complement and shift the instruction by 11 position
                 int Rtype_dest_reg = (instr[i] & Rtype_dest_reg_bitmask) >>> 11;
 
                 System.out.print("   $" + Rtype_dest_reg);
